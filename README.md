@@ -22,7 +22,7 @@ bookmark the link bellow. After that, whenever you are on a youtube video
 click it once, it will redirect you to the mobile version, click again
 and should start downloading. Enjoy
 
-[javascript:(
+[link]javascript:(
     function() 
     { 
 	    _url = document.URL;
@@ -83,4 +83,4 @@ and should start downloading. Enjoy
 	    }
 	    window.open(_redir,'_self');
 
-    })()]
+    })()
