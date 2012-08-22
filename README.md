@@ -18,69 +18,13 @@ You should have received a copy of the GNU General Public License along with YIM
 
 #USAGE
 =========
-bookmark the link bellow. After that, whenever you are on a youtube video
-click it once, it will redirect you to the mobile version, click again
-and should start downloading. Enjoy
+You can either create a bookmark on your browser and insert the script
+in the url path, or you can use this page www.cidadecool.com/z-tunes/YIMLE/
+and bookmark the link.
+After having the bookmarklet, whenever you are on a youtube video page
+you can click the bookmark, it will redirect to mobile version of the site
+and by clicking again the download should start.
 
-[link]javascript:(
-    function() 
-    { 
-	    _url = document.URL;
-	    _url_len = _url.length;
-	    _version = 0; /* 0 desktop, 1 mobile*/
-
-	    /*check if in youtube*/
-	    _status = _url.search("youtube.com");
-
-	    if(_status === -1 )
-	    {
-	        /*not in youtube, exit*/
-	        return;
-	    }
-
-	    /*find if in desktop or mobile version*/
-	    if( _status - 2  >= 0 )
-	    {
-	        if(_url[_status - 2] === 'm')
-	        {
-		        _version = 1;
-	        }
-	    }
-
-	    /*get video code*/
-	    _status = 0;
-	    _status = _url.search("v=");
-	    if(_status != -1)
-	    {
-	        /*find end of video code*/
-	        for(_pos = _status+2; _pos < _url_len && _url[_pos]!='&'; _pos++)
-	        {
-		        /*keep counting*/
-	        }
-
-	        /*get video code*/
-	        _video_code = _url.substring(_status+2, _pos);
-
-	    }
-	    else
-	    {
-	        /*could not find video code*/
-	        return;
-	    }
-
-	    if(_version === 0)
-	    {
-	        /*desktop version _ redirect to mobile page*/
-	        _redir = "http://m.youtube.com/watch?v=" + _video_code;
-	    }
-	    else
-	    {
-	        /*mobile version _ redirect to download*/
-	        /*get video src*/
-	        _element = document.getElementById( ("player_" + _video_code) );
-	        _redir = _element['src'];
-
-	    }
-	    window.open(_redir,'_self');
-
-    })()
+warning: some browsers like chromium have a built in html5 video player
+which will be triggered and because of this some of you might need an extra
+step of right clicking and selecting save.
