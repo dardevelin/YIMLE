@@ -20,7 +20,7 @@ You should have received a copy of the GNU General Public License along with YIM
 =========
 You can either create a bookmark on your browser and insert the script
 in the url path, or you can use this page www.cidadecool.com/z-tunes/YIMLE/
-and bookmark the link.
+and bookmark the link in it.
 After having the bookmarklet, whenever you are on a youtube video page
 you can click the bookmark, it will redirect to mobile version of the site
 and by clicking again the download should start.
