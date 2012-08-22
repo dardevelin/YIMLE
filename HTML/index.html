@@ -33,7 +33,7 @@ Bookmark the link bellow and you are ready to go!
 	    /*find if in desktop or mobile version*/
 	    if( _status - 2  >= 0 )
 	    {
-	        if(_url[_status - 2] === 'm')
+	        if(_url[_status - 2] === "m")
 	        {
 		        _version = 1;
 	        }
@@ -45,7 +45,7 @@ Bookmark the link bellow and you are ready to go!
 	    if(_status != -1)
 	    {
 	        /*find end of video code*/
-	        for(_pos = _status+2; _pos < _url_len && _url[_pos]!='&'; _pos++)
+	        for(_pos = _status+2; _pos < _url_len && _url[_pos]!="&"; _pos++)
 	        {
 		        /*keep counting*/
 	        }
@@ -73,7 +73,7 @@ Bookmark the link bellow and you are ready to go!
 	        _redir = _element['src'];
 
 	    }
-	    window.open(_redir,'_self');
+	    window.open(_redir,"_self");
 
     })()' >
 YIMLE
